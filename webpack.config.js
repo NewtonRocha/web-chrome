@@ -1,9 +1,9 @@
-// const HtmlWebPackPlugin = require("../AppData/Local/Microsoft/TypeScript/2.9/node_modules/@types/html-webpack-plugin");
+const HtmlWebPackPlugin = require("html-webpack-plugin");
 
-// const htmlWebpackPlugin = new HtmlWebPackPlugin({
-//   template: "./src/index.html",
-//   filename: "./index.html"
-// });
+const htmlWebpackPlugin = new HtmlWebPackPlugin({
+  template: "./src/index.html",
+  filename: "./index.html"
+});
 
 module.exports = {
   entry: "./src/index.js",
@@ -25,5 +25,5 @@ module.exports = {
       }
     ]
   },
-  // plugins: [htmlWebpackPlugin]
+  plugins: [htmlWebpackPlugin]
 };
