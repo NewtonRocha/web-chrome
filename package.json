@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --mode production --open",
+    "start": "serve",
     "start-dev": "webpack-dev-server --mode development --open",
     "build": "webpack --mode production"
   },
@@ -30,6 +30,7 @@
     "common-config-webpack-plugin": "^1.0.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "serve": "^10.1.1",
     "webpack-dev-server": "^3.1.0"
   }
 }
