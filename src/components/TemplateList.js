@@ -53,7 +53,7 @@ export class TemplateList extends React.Component {
         let newList = []
         for(let i = 0; i< this.state.templates.length; i++){
             if(this.state.templates[i].value == this.state.value.value){
-                newList.append(this.state.templates[i])
+                newList.push(this.state.templates[i])
             }
         }
         this.setState({
