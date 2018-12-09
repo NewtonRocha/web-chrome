@@ -34,7 +34,7 @@ export class TemplateList extends React.Component {
         this.setState({
             value: e.value
         })
-        window.parent.postMessage(e.value, this.props.parentOrigin);
+        window.top.postMessage(e.value, '*');
     }
 
     render() {
