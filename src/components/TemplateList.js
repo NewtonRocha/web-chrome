@@ -6,6 +6,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/Inbox';
+import DeleteIcon from '@material-ui/icons/Delete';
+import SendIcon from '@material-ui/icons/Send';
+import AddBoxIcon from '@material-ui/icons/AddBox';
+
 
 const styles = theme => ({
     root: {
@@ -25,16 +29,26 @@ export class TemplateList extends React.Component {
                 { name: "template 3", value: "Template de email 3" },
                 { name: "template 4", value: "Template de email 4" }
             ],
-            value: ''
+            value: {}
         }
         this.onChange = this.onChange.bind(this)
+        this.sendMessage = this.sendMessage.bind(this)
     }
 
     onChange(e) {
         this.setState({
-            value: e.value
+            value: e
         })
-        window.parent.postMessage(e.value, this.props.parentOrigin);
+        
+    }
+
+    sendMessage(){
+        window.parent.postMessage(this.state.value.value, this.props.parentOrigin);
+        window.parent.postMessage('close', this.props.parentOrigin);
+    }
+
+    removeFromList(){
+        
     }
 
     render() {
@@ -59,7 +73,27 @@ export class TemplateList extends React.Component {
                         </React.Fragment>
                     )
                 })}
-                <p>{this.state.value}</p>
+            </List>
+            <Divider />
+            <List component="nav">
+                <ListItem button onClick={this.sendMessage}>
+                    <ListItemIcon>
+                        <SendIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Use this template" />
+                </ListItem>
+                <ListItem button>
+                    <ListItemIcon>
+                        <AddBoxIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="Add new template" />
+                </ListItem>
+                <ListItem button>
+                    <IconButton aria-label="Delete">
+                        <DeleteIcon />
+                    </IconButton>
+                    <ListItemText primary="Remove Selected Template" />
+                </ListItem>
             </List>
         </div>
     }
