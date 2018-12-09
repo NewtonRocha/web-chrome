@@ -4,6 +4,7 @@ import style from "./index.css"
 import TemplateList from "./components/TemplateList";
 
 window.addEventListener('message', function greetingHandler(event) {
+  console.log(event)
   if (event.data === 'greeting') {
     window.removeEventListener('message', greetingHandler, false);
     parentOrigin = event.origin;
