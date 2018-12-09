@@ -63,7 +63,7 @@ export class TemplateList extends React.Component {
                         <React.Fragment key={i}>
                             <ListItem
                                 button
-                                selected={template.value == this.state.value}
+                                selected={template.value == this.state.value.value}
                                 onClick={event => this.onChange(template)}
                             >
                                 <ListItemIcon>
