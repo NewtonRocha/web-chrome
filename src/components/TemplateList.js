@@ -34,6 +34,7 @@ export class TemplateList extends React.Component {
         }
         this.onChange = this.onChange.bind(this)
         this.sendMessage = this.sendMessage.bind(this)
+        this.removeFromList = this.removeFromList.bind(this)
     }
 
     onChange(e) {
