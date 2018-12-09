@@ -4,7 +4,7 @@ import style from "./index.css"
 import TemplateList from "./components/TemplateList";
 
 window.addEventListener('message', function greetingHandler(event) {
-  if (event.data === 'greeting' && event.origin.match(/^chrome-extension:\/\//)) {
+  if (event.data === 'greeting') {
     window.removeEventListener('message', greetingHandler, false);
     parentOrigin = event.origin;
     ReactDOM.render(Index(parentOrigin), document.getElementById("index"));
