@@ -9,6 +9,7 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import DeleteIcon from '@material-ui/icons/Delete';
 import SendIcon from '@material-ui/icons/Send';
 import AddBoxIcon from '@material-ui/icons/AddBox';
+import Divider from '@material-ui/core/Divider';
 
 
 const styles = theme => ({
