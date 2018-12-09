@@ -13,15 +13,14 @@ window.addEventListener('message', function greetingHandler(event) {
   if (event.data === 'greeting' ) {
     window.removeEventListener('message', greetingHandler, false);
     parentOrigin = event.origin;
-    console.log(parentOrigin);
+    ReactDOM.render(Index(parentOrigin), document.getElementById("index"));
   }
 }, false);
 
 
-const Index = () => {
+const Index = (parentOrigin) => {
   return <div>
-    <TemplateList></TemplateList>
+    <TemplateList parentOrigin={parentOrigin}></TemplateList>
   </div>;
 };
 
-ReactDOM.render(<Index />, document.getElementById("index"));
