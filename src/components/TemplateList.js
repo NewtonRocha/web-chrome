@@ -25,7 +25,51 @@ export class TemplateList extends React.Component {
         super()
         this.state = {
             templates: [
-                { name: "template 1", value: "Template de email" },
+                {
+                    name: "template 1", value: `<body style="margin: 0; padding: 0;">
+                <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                 <tr>
+                  <td>
+                  <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                  <tr>
+                   <td width="260" valign="top">
+                    <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                     <tr>
+                      <td>
+                       <img src="images/left.gif" alt="" width="100%" height="140" style="display: block;" />
+                      </td>
+                     </tr>
+                     <tr>
+                      <td style="padding: 25px 0 0 0;">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+                      </td>
+                     </tr>
+                    </table>
+                   </td>
+                   <td style="font-size: 0; line-height: 0;" width="20">
+                    &nbsp;
+                   </td>
+                   <td width="260" valign="top">
+                    <table border="1" cellpadding="0" cellspacing="0" width="100%">
+                     <tr>
+                      <td>
+                       <img src="images/right.gif" alt="" width="100%" height="140" style="display: block;" />
+                      </td>
+                     </tr>
+                     <tr>
+                      <td style="padding: 25px 0 0 0;">
+                       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In tempus adipiscing felis, sit amet blandit ipsum volutpat sed. Morbi porttitor, eget accumsan dictum, nisi libero ultricies ipsum, in posuere mauris neque at erat.
+                      </td>
+                     </tr>
+                    </table>
+                   </td>
+                  </tr>
+                 </table>
+                  </td>
+                 </tr>
+                </table>
+               </body>`
+                },
                 { name: "template 2", value: "Template de email 2" },
                 { name: "template 3", value: "Template de email 3" },
                 { name: "template 4", value: "Template de email 4" }
@@ -41,18 +85,18 @@ export class TemplateList extends React.Component {
         this.setState({
             value: e
         })
-        
+
     }
 
-    sendMessage(){
+    sendMessage() {
         window.parent.postMessage(this.state.value.value, this.props.parentOrigin);
         window.parent.postMessage('close', this.props.parentOrigin);
     }
 
-    removeFromList(){
+    removeFromList() {
         let newList = []
-        for(let i = 0; i< this.state.templates.length; i++){
-            if(this.state.templates[i].value != this.state.value.value){
+        for (let i = 0; i < this.state.templates.length; i++) {
+            if (this.state.templates[i].value != this.state.value.value) {
                 newList.push(this.state.templates[i])
             }
         }
