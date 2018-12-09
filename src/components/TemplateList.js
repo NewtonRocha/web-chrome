@@ -49,7 +49,16 @@ export class TemplateList extends React.Component {
     }
 
     removeFromList(){
-        
+        let newList = []
+        for(let i = 0; i< this.state.templates.length; i++){
+            if(this.state.templates[i].value == this.state.value.value){
+                newList.append(this.state.templates[i])
+            }
+        }
+        this.setState({
+            templates: newList,
+            value: {}
+        })
     }
 
     render() {
@@ -89,7 +98,7 @@ export class TemplateList extends React.Component {
                     </ListItemIcon>
                     <ListItemText primary="Add new template" />
                 </ListItem>
-                <ListItem button>
+                <ListItem button onClick={this.removeFromList}>
                     <ListItemIcon aria-label="Delete">
                         <DeleteIcon />
                     </ListItemIcon>
