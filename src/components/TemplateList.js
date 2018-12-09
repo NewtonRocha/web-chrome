@@ -90,9 +90,9 @@ export class TemplateList extends React.Component {
                     <ListItemText primary="Add new template" />
                 </ListItem>
                 <ListItem button>
-                    <IconButton aria-label="Delete">
+                    <ListItemIcon aria-label="Delete">
                         <DeleteIcon />
-                    </IconButton>
+                    </ListItemIcon>
                     <ListItemText primary="Remove Selected Template" />
                 </ListItem>
             </List>
