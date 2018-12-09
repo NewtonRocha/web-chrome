@@ -52,7 +52,7 @@ export class TemplateList extends React.Component {
     removeFromList(){
         let newList = []
         for(let i = 0; i< this.state.templates.length; i++){
-            if(this.state.templates[i].value == this.state.value.value){
+            if(this.state.templates[i].value != this.state.value.value){
                 newList.push(this.state.templates[i])
             }
         }
